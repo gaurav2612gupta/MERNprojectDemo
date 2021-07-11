@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
+const DB = 'mongodb+srv://gaurav2612:gaurav2612@cluster0.412qv.mongodb.net/gauravsData?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb://localhost:27017/Project2',{
+mongoose.connect(DB,{
     useCreateIndex:true,
     useNewUrlParser:true,
-    useUnifiedTopology:true
+    useUnifiedTopology:true,
+    useFindAndModify:false
 }).then(()=>{
     console.log("Connection Successful")
-}).catch((error)=>{
-    console.log("Error While Connecting!")
-})
+}).catch((err)=>console.log('No connection'))
+
